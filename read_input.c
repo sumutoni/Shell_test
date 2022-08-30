@@ -13,7 +13,7 @@ char *readline()
 
 	line = malloc(sizeof(char) * BUFSIZE);
 	if (!line)
-		exit (EXIT_SUCCESS);
+		exit(EXIT_SUCCESS);
 	bytes = getline(&line, &buf, stdin);
 	if (bytes < 0)
 	{

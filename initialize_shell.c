@@ -3,6 +3,7 @@
  * initialize_shell - initializes shell
  * @args: pointer to arguments passed
  * @envp: pointer to environment variables
+ * @s: argument passed to start shell
  *
  * Return: 1 if initialization is successful, -1 if failed
  */
