@@ -17,7 +17,7 @@ int main(int ac, char **av)
 		printf("$ ");
 		line = readline();
 		arguments = splitline(line);
-		status = initialize_shell(arguments, NULL);
+		status = initialize_shell(arguments, NULL, av[0]);
 	} while (status);
 	return (status);
 }

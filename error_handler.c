@@ -6,5 +6,5 @@
  */
 void print_command_error(char *command)
 {
-	printf("./shell: no such file or directory\n");
+	printf("%s: no such file or directory\n", command);
 }

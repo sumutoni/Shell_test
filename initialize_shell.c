@@ -6,7 +6,7 @@
  *
  * Return: 1 if initialization is successful, -1 if failed
  */
-int initialize_shell(char **args, char **envp)
+int initialize_shell(char **args, char **envp, char *s)
 {
 	pid_t pid;
 	int status;
@@ -21,7 +21,7 @@ int initialize_shell(char **args, char **envp)
 	{
 		if (execve(args[0], args, NULL) == -1)
 		{
-			print_command_error(args[0]);
+			print_command_error(s);
 			return (-1);
 		}
 		execve(args[0], args, NULL);
