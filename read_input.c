@@ -18,10 +18,7 @@ char *readline()
 	if (bytes < 0)
 	{
 		if (feof(stdin))
-		{
-			printf("\n");
 			exit(EXIT_SUCCESS);
-		}
 		else
 		{
 			printf("Readline Error\n");
@@ -39,7 +36,7 @@ char *readline()
 char **splitline(char *args)
 {
 	char **arguments;
-	char *delimiter = " ";
+	char *delimiter = " \n";
 	char *argument;
 	int index = 0;
 

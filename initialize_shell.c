@@ -21,7 +21,7 @@ int initialize_shell(char **args, char **envp)
 	{
 		if (execve(args[0], args, NULL) == -1)
 		{
-			printf("Executing error\n");
+			print_command_error(args[0]);
 			return (-1);
 		}
 		execve(args[0], args, NULL);

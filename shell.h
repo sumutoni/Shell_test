@@ -35,5 +35,6 @@ int initialize_shell(char **args, char **envp);
 int execute(char **args);
 char *readline();
 char **splitline(char *line);
+void print_command_error(char *command);
 
 #endif
