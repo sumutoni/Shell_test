@@ -24,6 +24,7 @@ int initialize_shell(char **args, char **envp)
 			printf("Executing error\n");
 			return (-1);
 		}
+		execve(args[0], args, NULL);
 	}
 	else
 	{

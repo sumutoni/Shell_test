@@ -11,11 +11,17 @@ char *readline()
 	size_t buf = BUFSIZE;
 	int bytes;
 
+	line = malloc(sizeof(char) * BUFSIZE);
+	if (!line)
+		exit (EXIT_SUCCESS);
 	bytes = getline(&line, &buf, stdin);
 	if (bytes < 0)
 	{
 		if (feof(stdin))
+		{
+			printf("\n");
 			exit(EXIT_SUCCESS);
+		}
 		else
 		{
 			printf("Readline Error\n");
@@ -37,12 +43,16 @@ char **splitline(char *args)
 	char *argument;
 	int index = 0;
 
+	arguments = malloc(sizeof(char *) * BUFSIZE);
+	if (!arguments)
+		exit(EXIT_FAILURE);
 	argument = strtok(args, delimiter);
 	while (argument != NULL)
 	{
+		arguments[index] = malloc(sizeof(char) * BUFSIZE);
 		arguments[index] = argument;
 		index++;
-		strtok(NULL, delimiter);
+		argument = strtok(NULL, delimiter);
 	}
 	arguments[index] = NULL;
 	return (arguments);
